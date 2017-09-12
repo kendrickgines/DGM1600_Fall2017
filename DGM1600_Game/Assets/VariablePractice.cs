@@ -36,5 +36,5 @@ public class VariablePractice : MonoBehaviour {
 	// My understanding is that variables make up the basics of coding.  They don't do much on their own, but pretty much everything
 	// else that we will be using depends on variables.  
 
-	}
+
 }
