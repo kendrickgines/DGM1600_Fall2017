@@ -10,21 +10,21 @@ public class ConventionsAndSyntax : MonoBehaviour {
 // conventions were created.  These conventions allow for greater understanding between developers by
 // creating a structured system that all developers follow in creating their code.  
 
-string name;
+string charName;
 int age;
 
 	void Start () {
 		
 		// It is possible to write code that is will work without using the right conventions.  For example:
 
-name="Jerry";age=26;print(name);print(age);
+charName="Jerry";age=26;print(charName);print(age);
 
 		// This will tecnically still work in a program, but the next person who reads the code will be 
 		// frustrated by the way it was formatted.  A better way to do this is:
 
-		name = "Jerry";
-		age = "26";
-		print(name);
+		charName = "Jerry";
+		age = 26;
+		print(charName);
 		print(age);
 
 		// This block of code still works, and is much easier to process by a reader.  
