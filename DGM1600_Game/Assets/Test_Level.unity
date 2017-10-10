@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44639128, g: 0.49620694, b: 0.5747069, a: 1}
+  m_IndirectSpecularColor: {r: 0.35133123, g: 0.35105002, b: 0.31673062, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -269,13 +269,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 481364532}
-  m_LocalRotation: {x: 0.41275746, y: -0.23513615, z: 0.10816244, w: 0.8732944}
+  m_LocalRotation: {x: 0.96571416, y: -0.20170374, z: -0.16218412, w: 0.020202182}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50.514004, y: -30.36, z: -0.46800002}
+  m_LocalEulerAnglesHint: {x: -1.5130001, y: -161.246, z: -156.65501}
 --- !u!1 &1724039766
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,10 +303,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1724039766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94eadd4823bfa884e8eebae2587977b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 17adae736a1017644b0fc58e74e066b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserBlast: 3
+  townCenter: 
+  townGaurd: talk
+  shadyGuy: fight
+  bakery: cake
+  beggar: cake
+  armory: sword
+  huntingSupplier: bow
+  zombieAttack: barricade
+  dragon: bow
+  finish: help
 --- !u!23 &1724039768
 MeshRenderer:
   m_ObjectHideFlags: 0
