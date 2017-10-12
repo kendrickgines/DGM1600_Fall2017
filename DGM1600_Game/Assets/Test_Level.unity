@@ -303,19 +303,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1724039766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17adae736a1017644b0fc58e74e066b0, type: 3}
+  m_Script: {fileID: 11500000, guid: d5d1f0325037b3f4596ce89a2ba8adbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  townCenter: 
-  townGaurd: talk
-  shadyGuy: fight
-  bakery: cake
-  beggar: cake
-  armory: sword
-  huntingSupplier: bow
-  zombieAttack: barricade
-  dragon: bow
-  finish: help
 --- !u!23 &1724039768
 MeshRenderer:
   m_ObjectHideFlags: 0
