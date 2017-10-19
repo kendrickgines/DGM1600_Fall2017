@@ -24,7 +24,7 @@ public class VoidFunctions : MonoBehaviour {
 			print("Porkins misses the mark.");
 		}
 		else if(vent == 2){
-			print("Old dude misses the mark.");
+			print("Old dude blows up.");
 		}
 		else{
 			print("Luke makes the shot.");
