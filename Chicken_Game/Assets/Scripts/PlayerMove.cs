@@ -22,7 +22,7 @@ public float sprintSpeed;
 
 		if (Input.GetButton("Sprint")){
 			z = Input.GetAxis("Vertical")* Time.deltaTime * (moveSpeed + sprintSpeed);
-			j = Input.GetAxis("Jump")* Time.deltaTime * (jumpHeight = sprintSpeed);
+			j = Input.GetAxis("Jump")* Time.deltaTime * (jumpHeight + sprintSpeed);
 		}
 
 		else{
