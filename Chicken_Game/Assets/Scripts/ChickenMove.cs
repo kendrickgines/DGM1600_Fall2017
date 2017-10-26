@@ -9,6 +9,20 @@ public class ChickenMove : MonoBehaviour {
 	public Transform target;
 	// public float distance;
 	public float chickenSpeed = 7;
+	public float directionChangeSpeed = .01f;
+
+	CharacterController controller;
+	float heading;
+	Vector3 targetRotation;
+
+
+
+	// void Awake (){
+	// 	controller = GetComponent<CharacterController>();
+	// 	heading = (Random.Range(0, 360) * Time.deltaTime);
+	// 	transform.eulerAngles = new Vector3(0, heading, 0);
+	// }
+
 	void Start () {
 		player = GameObject.FindWithTag("Player").transform;
 		// chicken = GameObject.FindWithTag("Chicken").transform;
@@ -30,9 +44,11 @@ public class ChickenMove : MonoBehaviour {
 		}
 	}
 
-	// void Update () {
+	void Update () {
 		
-
+		transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, targetRotation, Time.deltaTime * directionChangeSpeed);
+		var forward = transform.TransformDirection(Vector3.forward);
+		controller.SimpleMove(forward * chickenSpeed);
 
 		// if((distance<20)
 		// && (distance>3)){
@@ -47,5 +63,6 @@ public class ChickenMove : MonoBehaviour {
 		// else {
 		// 	transform.Translate (Vector3.forward * 0);
 		// }
-// 	}
+	}
+
 }
