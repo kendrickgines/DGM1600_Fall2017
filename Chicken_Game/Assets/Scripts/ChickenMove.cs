@@ -50,6 +50,7 @@ public class ChickenMove : MonoBehaviour {
 			transform.LookAt(wolf);
 			transform.Translate(Vector3.back * chickenSpeed * Time.deltaTime);
 		}
+		else StartCoroutine(RandomWalkLoop());
 
 	}
 	

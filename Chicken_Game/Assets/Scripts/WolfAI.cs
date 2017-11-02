@@ -9,8 +9,10 @@ public class WolfAI : MonoBehaviour {
 	public Transform chicken;
 	public Transform wolf;
 	public Transform target;
+	public int damage;
 	// public float distance;
 	public float wolfSpeed = 10;
+	
 	void Start () {
 		player = GameObject.FindWithTag("Player").transform;
 		chicken = GameObject.FindWithTag("Chicken").transform;
@@ -30,6 +32,17 @@ public class WolfAI : MonoBehaviour {
 			Debug.Log("Chicken Enters Wolf's trigger.");
 			transform.LookAt(chicken);
 			transform.Translate(Vector3.forward * wolfSpeed * Time.deltaTime);
+		}
+	}
+
+	void OnCollisionEnter(Collision other)
+	{
+
+		var hit = other.gameObject;
+		var health = hit.GetComponent<PlayerHealth>();
+
+		if(health != null){
+			health.TakeDamage(damage);
 		}
 	}
 
