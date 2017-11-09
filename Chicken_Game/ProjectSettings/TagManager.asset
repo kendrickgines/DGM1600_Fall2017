@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Chicken
   - Wolf
+  - Checkpoint
+  - Wall
+  - Ground
   layers:
   - Default
   - TransparentFX
