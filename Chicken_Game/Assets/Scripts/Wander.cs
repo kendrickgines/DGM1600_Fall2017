@@ -27,16 +27,26 @@ public class Wander : MonoBehaviour {
 		transform.Rotate(0,turnNum,0);
 	}
 
+	void Start(){
+		
+	}
+
+
 	void OnTriggerStay(Collider other){
 		if(other.gameObject.tag == "Ground"){
 			MoveForward();
-		}
-		
-
+			StartCoroutine(TimedTurn());
 			
-		
-	}
-	void OnTriggerExit(Collider other){
+			}
+		}
+
+		IEnumerator TimedTurn(){
+		yield return new WaitForSeconds(5);
+		print("Chicken turned.");
+		SlowTurn();
+}
+
+void OnTriggerExit(Collider other){
 		if(other.gameObject.tag == "Checkpoint"){
 			TurnAround();
 		}
@@ -46,6 +56,6 @@ public class Wander : MonoBehaviour {
 		if(other.gameObject.tag == "Wall"){
 			Turn();
 	}
-
 	}
+
 }

@@ -12,8 +12,7 @@ public Transform wolf;
 public Transform chickenPen;
 
 	void Awake(){
-		float randomNum = (Random.Range(0,360) * Time.deltaTime);
-		transform.Rotate(0,randomNum,0);
+		
 		
 	}
 
@@ -22,6 +21,9 @@ void Start () {
 		wolf = GameObject.FindWithTag("Wolf").transform;
 		chickenPen = GameObject.FindWithTag("ChickenPen").transform;
 		chicken = GameObject.FindWithTag("Chicken").transform;
+
+		float randomNum = (Random.Range(0,360) * Time.deltaTime);
+		transform.Rotate(0,randomNum,0);
 	}
 	
 	void OnTriggerStay(Collider other){

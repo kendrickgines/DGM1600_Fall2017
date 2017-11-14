@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour {
 
 public const int maxHealth = 10;
-public int currentHealth = maxHealth;
+public int currentHealth = 10;
 
 public Text hp;
 public Text maxHP;
@@ -24,8 +24,8 @@ public Text maxHP;
 
 	public void TakeDamage(int amount){
 		currentHealth -= amount;
-		if(currentHealth<= 0){
-			currentHealth=0;
+		if(currentHealth <= 0){
+			currentHealth = 0;
 			print("You are Dead");
 		}
 	}
