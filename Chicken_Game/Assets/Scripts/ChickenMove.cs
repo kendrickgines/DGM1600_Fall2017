@@ -5,38 +5,30 @@ using UnityEngine;
 public class ChickenMove : MonoBehaviour {
 
 	public Transform player;
-	public Transform wolf;
 	// public Transform chicken;
 	public Transform target;
-	public Transform chickenPen;
 	// public float distance;
 	public float chickenSpeed = 7;
-	public float directionChangeSpeed = 1;
+	public float directionChangeSpeed = .01f;
 
 	CharacterController controller;
-	public float heading;
-	public float maxHeadingChange;
+	float heading;
 	Vector3 targetRotation;
 
 
 
 	void Awake (){
 		controller = GetComponent<CharacterController>();
-		heading = (Random.Range(0, 360));
+		heading = (Random.Range(0, 360) * Time.deltaTime);
 		transform.eulerAngles = new Vector3(0, heading, 0);
-
-		StartCoroutine(RandomWalkLoop());
 	}
 
 	void Start () {
 		player = GameObject.FindWithTag("Player").transform;
-		wolf = GameObject.FindWithTag("Wolf").transform;
 		// chicken = GameObject.FindWithTag("Chicken").transform;
 		// distance = Vector3.Distance(chicken.position, player.position);
 
 	}
-
-	
 
 	void OnTriggerStay(Collider other){
 
@@ -47,23 +39,14 @@ public class ChickenMove : MonoBehaviour {
 		}
 		else if(other.gameObject.name == "Wolf"){
 			Debug.Log("Wolf Enters Chicken's trigger.");
-			transform.LookAt(wolf);
+			transform.LookAt(target);
 			transform.Translate(Vector3.back * chickenSpeed * Time.deltaTime);
-		}
-		else StartCoroutine(RandomWalkLoop());
-
-	}
-	
-	void OnCollisionEnter(Collision other){
-		if(other.gameObject.name == "Player"){
-			transform.position = chickenPen.position;
-			transform.rotation = chickenPen.rotation;
 		}
 	}
 
 	void Update () {
 		
-		transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, targetRotation, Time.deltaTime * chickenSpeed);
+		transform.eulerAngles = Vector3.Slerp(transform.eulerAngles, targetRotation, Time.deltaTime * directionChangeSpeed);
 		var forward = transform.TransformDirection(Vector3.forward);
 		controller.SimpleMove(forward * chickenSpeed);
 
@@ -80,16 +63,6 @@ public class ChickenMove : MonoBehaviour {
 		// else {
 		// 	transform.Translate (Vector3.forward * 0);
 		// }
-	}
-	IEnumerator RandomWalkLoop(){
-			yield return new WaitForSeconds(directionChangeSpeed * Time.deltaTime);
-		}
-
-	void NewDirection(){
-		var floor = Mathf.Clamp(heading - maxHeadingChange, 0, 360);
-		var ceiling = Mathf.Clamp(heading + maxHeadingChange, 0, 360);
-		heading = Random.Range(floor, ceiling);
-		targetRotation = new Vector3(0, heading, 0);
 	}
 
 }
